@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: lbkwcgap5-python-gitops
+  description: This is GitOps manifest for lbkwcgap5-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=lbkwcgap5-python
+    backstage.io/kubernetes-id: lbkwcgap5-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: lbkwcgap5-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:lbkwcgap5-python
